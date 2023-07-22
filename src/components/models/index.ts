@@ -1,1 +1,1 @@
-export { IMedicalHistory } from './medicalHistoryData.model';
+export { IMedicalHistory, IColumnDefinition } from './medicalHistoryData.model';

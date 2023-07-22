@@ -1,4 +1,5 @@
 import { IMedicalHistory } from '../models';
+import { IColumnDefinition } from '../models/medicalHistoryData.model';
 
 export const medicalHistoryData: IMedicalHistory[] = [
   {
@@ -245,4 +246,39 @@ export const medicalHistoryData: IMedicalHistory[] = [
     label: 'Urinary incontinence',
     kind: 'Modified',
   },
+];
+
+export const medicalHistoryColumnDefinition: IColumnDefinition[] = [
+  {
+    identifier: 'label',
+    sortable: false,
+    headerLabel: 'Label',
+    width: 25,
+    isFilterable: true,
+  },
+  { identifier: 'kind', sortable: false, headerLabel: 'Kind', width: 10 },
+  {
+    identifier: 'oldValue',
+    sortable: false,
+    headerLabel: 'Old Value',
+    width: 15,
+    showTooltip: true,
+    isFilterable: true,
+  },
+  {
+    identifier: 'newValue',
+    sortable: false,
+    headerLabel: 'New Value',
+    width: 15,
+    showTooltip: true,
+    isFilterable: true,
+  },
+  {
+    identifier: 'changedBy',
+    sortable: false,
+    headerLabel: 'Changed By',
+    width: 15,
+  },
+  { identifier: 'updatedOn', sortable: true, headerLabel: 'When', width: 16 },
+  { identifier: 'task', sortable: false, headerLabel: 'Task', width: 14 },
 ];

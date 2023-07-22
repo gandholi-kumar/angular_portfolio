@@ -1,3 +1,7 @@
 <ng-container *ngIf="medicalData$ | async as medicData">
-  <app-table [tableTitle]="'Medical Details'" [data]="medicData"></app-table>
+  <app-table
+    [tableTitle]="'Medical Details'"
+    [data]="medicData"
+    [tableColDef]="tableConfig"
+  ></app-table>
 </ng-container>

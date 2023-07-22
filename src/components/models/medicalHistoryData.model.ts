@@ -9,3 +9,14 @@ export interface IMedicalHistory {
   kind?: string;
   valueCategory?: string;
 }
+
+type medicalHistoryKeys = keyof IMedicalHistory;
+
+export interface IColumnDefinition {
+  identifier: medicalHistoryKeys;
+  sortable: boolean;
+  headerLabel: string;
+  width: number;
+  showTooltip?: boolean;
+  isFilterable?: boolean;
+}

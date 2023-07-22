@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IMedicalHistory } from '../../models';
+import { IColumnDefinition, IMedicalHistory } from '../../models';
 
 @Component({
   selector: 'app-table',
@@ -9,6 +9,7 @@ import { IMedicalHistory } from '../../models';
 export class TableComponent implements OnInit {
   @Input() tableTitle!: string;
   @Input() data!: IMedicalHistory[];
+  @Input() tableColDef!: IColumnDefinition[];
 
   constructor() {}
 
