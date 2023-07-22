@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./table-container.component.css']
 })
 export class TableContainerComponent implements OnInit {
+  
 
   constructor() { }
 
