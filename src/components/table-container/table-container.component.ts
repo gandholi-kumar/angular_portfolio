@@ -18,6 +18,10 @@ export class TableContainerComponent implements OnInit {
 
   ngOnInit() {
     this.medicalData$ = this.medicalService.getMedicalData();
-    console.log(this.tableConfig)
+    console.log(this.tableConfig);
+  }
+
+  onSearch(searchText: unknown) {
+    console.log('searchText', searchText);
   }
 }
