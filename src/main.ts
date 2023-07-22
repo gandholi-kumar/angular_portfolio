@@ -9,11 +9,12 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { APP_ROUTES } from './app-routing';
 import { SharedModule } from './shared/shared.module';
+import { ComponentsModule } from './components/components.module';
 
 @Component({
   selector: 'my-app',
   standalone: true,
-  imports: [CommonModule, RouterModule, SharedModule],
+  imports: [CommonModule, RouterModule, SharedModule, ComponentsModule],
   templateUrl: './main.html',
 })
 export class App {
