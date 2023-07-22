@@ -1,2 +1,3 @@
-<h3>Table</h3>
-<app-table></app-table>
+<ng-container *ngIf="medicalData$ | async as medicData">
+  <app-table [tableTitle]="'Medical Details'" [data]="medicData"></app-table>
+</ng-container>

@@ -16,7 +16,7 @@ body {
 }
 
 #header {
-  display: flex; 
+  display: flex;
   background: #333;
   color: #fff;
   padding: 0 10px;
@@ -32,8 +32,7 @@ a {
 }
 
 #main {
-  width: 98%;
-  padding: 1rem;
+  padding: 0 1rem;
 }
 
 app-nav {
