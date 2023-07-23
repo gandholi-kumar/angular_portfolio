@@ -1,0 +1,11 @@
+<ng-container *ngIf="medicalData$ | async as medicData">
+  <div class="table_title--flex">
+    <h3>Medical Details</h3>
+    <app-search-text (onSearch)="onSearch($event)"></app-search-text>
+  </div>
+  <app-table
+    [tableTitle]="'Medical Details'"
+    [data]="medicData | tableFilter: searchTerm"
+    [tableColDef]="tableConfig"
+  ></app-table>
+</ng-container>

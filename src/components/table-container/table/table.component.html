@@ -1,0 +1,27 @@
+<!-- <h3>{{ tableTitle }}</h3> -->
+<table>
+  <thead>
+    <tr>
+      <ng-container *ngFor="let def of tableColDef">
+        <th [id]="def.identifier" [style.width.%]="def.width">
+          {{ def.headerLabel }}
+          <ng-container *ngIf="def.isFilterable">
+            <span class="filterIdentifier"></span>
+          </ng-container>
+        </th>
+      </ng-container>
+    </tr>
+  </thead>
+  <tbody> 
+    <ng-container *ngIf="data.length > 0; else noData">
+      <ng-container *ngFor="let val of data">
+        <tr>
+          <ng-container *ngFor="let def of tableColDef">
+            <td>{{ val[def.identifier] ? val[def.identifier] : '&mdash;' }}</td>
+          </ng-container>
+        </tr>
+      </ng-container>
+    </ng-container>
+    <ng-template #noData> No data to display! </ng-template>
+  </tbody>
+</table>

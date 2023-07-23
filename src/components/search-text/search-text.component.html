@@ -1,0 +1,11 @@
+<div class="search">
+  <input
+    id="searchInput"
+    type="text"
+    [ngModel]="searchValue"
+    (ngModelChange)="onValueChange($event)"
+    [disabled]="disabled"
+    class="searchTerm"
+    placeholder="search!!!!"
+  />
+</div>

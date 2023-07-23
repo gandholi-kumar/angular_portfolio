@@ -10,17 +10,16 @@ ul {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  color: #333;
-  line-height: 1.4;
+  color: #fff;
+  background-color: #181A1B !important;
+  line-height: 2.4;
 }
 
 #header {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 15px;
   background: #333;
   color: #fff;
-  padding: 10px;
+  padding: 0 10px;
 }
 
 #header nav {
@@ -28,9 +27,16 @@ body {
   flex-direction: row;
 }
 
+a {
+  color: #fff;
+}
+
 #main {
-  width: 98%;
-  padding: 1rem;
+  padding: 0 1rem;
+}
+
+app-nav {
+  display: flex;
 }
 
 #sidebar {
