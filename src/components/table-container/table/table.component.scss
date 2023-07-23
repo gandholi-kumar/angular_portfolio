@@ -4,40 +4,33 @@ table {
   display: block;
   height: 450px;
   overflow-y: scroll;
-}
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
 
-thead th {
-  position: sticky;
-  top: 0;
-}
+  thead th {
+    position: sticky;
+    top: 0;
+    background-color: #04aa6d;
+    color: white;
 
-th,
-td {
-  text-align: left;
-  padding: 1rem;
-}
+    .filterIdentifier {
+      height: 6px;
+      width: 6px;
+      background-color: #d0a02a;
+      border-radius: 50%;
+      display: inline-block;
+    }
+  }
 
-tr {
-  border-bottom: 1pt solid #d0d0d0;
-}
+  th,
+  td {
+    text-align: left;
+    padding: 1rem;
+  }
 
-tr:nth-child(even) {
-  background-color: #1f2223;
-}
+  tr {
+    border-bottom: 1pt solid #d0d0d0;
 
-th {
-  background-color: #04aa6d;
-  color: white;
-}
-
-th .filterIdentifier {
-  height: 6px;
-  width: 6px;
-  background-color: #d0a02a;
-  border-radius: 50%;
-  display: inline-block;
+    &:nth-child(even) {
+      background-color: #1f2223;
+    }
+  }
 }
