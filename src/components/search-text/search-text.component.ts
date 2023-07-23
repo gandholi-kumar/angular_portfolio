@@ -8,9 +8,9 @@ import { debounceTime, distinctUntilChanged, Subject } from 'rxjs';
 })
 export class SearchTextComponent implements OnInit {
   @Input() disabled: boolean = false;
-  @Input() searchValue: string | number | null = '';
+  @Input() searchValue: string = '';
 
-  @Output() onSearch = new EventEmitter<string | number | null>();
+  @Output() onSearch = new EventEmitter<string>();
 
   constructor() {}
 
@@ -20,7 +20,7 @@ export class SearchTextComponent implements OnInit {
     this.searchUpdate$
       .pipe(debounceTime(500), distinctUntilChanged())
       .subscribe((value) => {
-        this.onSearch.emit(value);
+        this.onSearch.emit(value as string);
       });
   }
 

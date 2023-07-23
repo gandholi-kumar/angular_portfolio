@@ -22,9 +22,7 @@ export class TableContainerComponent implements OnInit {
     console.log(this.tableConfig);
   }
 
-  onSearch(searchText: string | number | null) {
-    if (searchText && !!searchText) {
-      this.searchTerm = searchText.toString();
-    }
+  onSearch(searchText: string) {
+    this.searchTerm = String(searchText).toString();
   }
 }

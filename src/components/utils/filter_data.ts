@@ -15,19 +15,20 @@ export const filterHistoryTable = (
   search: string,
   keys: medicalHistoryKeys[] = filteredKeys
 ) => {
-  console.log('search', search);
+  console.log('search filter pipe', search);
   if (
     tableData.length === 0 ||
     keys.length === 0 ||
-    typeof search === 'undefined'
+    typeof search === 'undefined' ||
+    search.trim() === ''
   ) {
     return tableData;
   } else {
     return tableData.filter((historyData) => {
       return keys.some((key) => {
-        String(historyData[key]).toLowerCase().includes(search.toLowerCase());
-        // const val = historyData[key];
-        // return val ? val.includes(search.toLowerCase()) : [];
+        return String(historyData[key])
+          .toLowerCase()
+          .includes(search.toLowerCase());
       });
     });
   }
