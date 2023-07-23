@@ -4,6 +4,7 @@ table {
   display: block;
   height: 450px;
   overflow-y: scroll;
+  scrollbar-width: thin;
 
   thead th {
     position: sticky;
