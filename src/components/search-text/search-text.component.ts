@@ -4,7 +4,7 @@ import { debounceTime, distinctUntilChanged, Subject } from 'rxjs';
 @Component({
   selector: 'app-search-text',
   templateUrl: './search-text.component.html',
-  styleUrls: ['./search-text.component.css'],
+  styleUrls: ['./search-text.component.scss'],
 })
 export class SearchTextComponent implements OnInit {
   @Input() disabled: boolean = false;
