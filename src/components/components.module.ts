@@ -6,6 +6,7 @@ import { TableComponent } from './table-container/table/table.component';
 import { MedicalService } from './table-container/service/medical.service';
 import { SearchTextComponent } from './search-text/search-text.component';
 import { FormsModule } from '@angular/forms';
+import { TableFilterPipe } from './pipes/table-filter.pipe';
 
 @NgModule({
   imports: [CommonModule, FormsModule],
@@ -14,12 +15,14 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     TableComponent,
     SearchTextComponent,
+    TableFilterPipe,
   ],
   exports: [
     TableContainerComponent,
     HomeComponent,
     TableComponent,
     SearchTextComponent,
+    TableFilterPipe,
   ],
   providers: [MedicalService],
 })

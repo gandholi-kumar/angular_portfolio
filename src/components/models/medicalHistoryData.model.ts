@@ -10,7 +10,7 @@ export interface IMedicalHistory {
   valueCategory?: string;
 }
 
-type medicalHistoryKeys = keyof IMedicalHistory;
+export type medicalHistoryKeys = keyof IMedicalHistory;
 
 export interface IColumnDefinition {
   identifier: medicalHistoryKeys;

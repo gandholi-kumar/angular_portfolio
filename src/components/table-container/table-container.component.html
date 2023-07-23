@@ -2,7 +2,7 @@
   <app-search-text (onSearch)="onSearch($event)"></app-search-text>
   <app-table
     [tableTitle]="'Medical Details'"
-    [data]="medicData"
+    [data]="medicData | tableFilter: searchTerm"
     [tableColDef]="tableConfig"
   ></app-table>
 </ng-container>

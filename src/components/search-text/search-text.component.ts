@@ -1,11 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import {
-  debounceTime,
-  distinctUntilChanged,
-  startWith,
-  Subject,
-  takeUntil,
-} from 'rxjs';
+import { debounceTime, distinctUntilChanged, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-search-text',
@@ -18,31 +12,19 @@ export class SearchTextComponent implements OnInit {
 
   @Output() onSearch = new EventEmitter<string | number | null>();
 
-  private searchValue$: Subject<string | number | null> = new Subject<
-    string | number | null
-  >();
-  private onDestroy$: Subject<void> = new Subject<void>();
-
   constructor() {}
 
+  searchUpdate$ = new Subject<string>();
+
   ngOnInit() {
-    // this.searchValue$
-    //   .pipe(
-    //     startWith(this.searchValue),
-    //     distinctUntilChanged(),
-    //     takeUntil(this.onDestroy$)
-    //   )
-    //   .subscribe((val) => this.onSearch.emit(val));
+    this.searchUpdate$
+      .pipe(debounceTime(500), distinctUntilChanged())
+      .subscribe((value) => {
+        this.onSearch.emit(value);
+      });
   }
 
-  onValueChange(currentValue: any) {
-    if (this.searchValue$.asObservable.length === 0) {
-      this.searchValue$
-        .pipe(debounceTime(5000), distinctUntilChanged())
-        .subscribe((filterQuery) => {
-          this.onSearch.emit(filterQuery);
-        });
-    }
-    this.searchValue$.next(currentValue);
+  onValueChange(currentValue: string) {
+    this.searchUpdate$.next(currentValue);
   }
 }

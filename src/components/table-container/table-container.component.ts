@@ -13,6 +13,7 @@ import { MedicalService } from './service/medical.service';
 export class TableContainerComponent implements OnInit {
   medicalData$!: Observable<IMedicalHistory[]>;
   tableConfig: IColumnDefinition[] = medicalHistoryColumnDefinition;
+  searchTerm!: string;
 
   constructor(private medicalService: MedicalService) {}
 
@@ -21,7 +22,10 @@ export class TableContainerComponent implements OnInit {
     console.log(this.tableConfig);
   }
 
-  onSearch(searchText: unknown) {
-    console.log('searchText', searchText);
+  onSearch(searchText: string | number | null) {
+    if (searchText && !!searchText) {
+      console.log('searchText', searchText.toString());
+      this.searchTerm = searchText.toString();
+    }
   }
 }
