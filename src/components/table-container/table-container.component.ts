@@ -24,7 +24,6 @@ export class TableContainerComponent implements OnInit {
 
   onSearch(searchText: string | number | null) {
     if (searchText && !!searchText) {
-      console.log('searchText', searchText.toString());
       this.searchTerm = searchText.toString();
     }
   }

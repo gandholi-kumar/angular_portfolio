@@ -26,10 +26,18 @@ tr {
 }
 
 tr:nth-child(even) {
-  background-color: #1F2223;
+  background-color: #1f2223;
 }
 
 th {
   background-color: #04aa6d;
   color: white;
+}
+
+th .filterIdentifier {
+  height: 6px;
+  width: 6px;
+  background-color: #d0a02a;
+  border-radius: 50%;
+  display: inline-block;
 }
